@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#18a058">
+    <title>아기랑 놀러가자</title>
+    <link rel="manifest" href="manifest.webmanifest?v=7">
+    <link rel="stylesheet" href="styles/base.css?v=7">
+    <link rel="stylesheet" href="styles/layout.css?v=7">
+    <link rel="stylesheet" href="styles/map.css?v=7">
+    <link rel="stylesheet" href="styles/components.css?v=7">
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">31개월 + 11개월 가족 나들이</p>
+          <h1>아기랑 놀러가자</h1>
+        </div>
+        <button class="icon-button" id="locateBtn" aria-label="현재 위치 주변 보기">◎</button>
+      </header>
+
+      <main class="workspace">
+        <section class="map-panel" aria-label="전국 지도">
+          <div class="search-card">
+            <label for="searchInput">지역 또는 장소 검색</label>
+            <div class="search-row">
+              <input id="searchInput" type="search" placeholder="예: 부산 바다, 서울 카페">
+              <button id="searchBtn">검색</button>
+            </div>
+            <div id="suggestions" class="suggestions" aria-label="추천 검색어"></div>
+          </div>
+
+          <div class="zoom-controls" aria-label="지도 확대 축소">
+            <button id="zoomIn" aria-label="확대">+</button>
+            <span id="zoomLevel">7단계</span>
+            <button id="zoomOut" aria-label="축소">-</button>
+          </div>
+
+          <div class="real-map" id="mapCanvas" aria-label="대한민국 실제 지도">
+            <div class="tile-layer" id="tileLayer"></div>
+            <div class="map-vignette"></div>
+            <div class="marker-layer" id="markerLayer"></div>
+            <div class="map-attribution">© OpenStreetMap</div>
+          </div>
+        </section>
+
+        <aside class="result-panel" aria-label="추천 장소 목록">
+          <div class="panel-head">
+            <span id="resultCount">추천 0곳</span>
+            <button id="clearFilter">전체</button>
+          </div>
+          <div id="placeList" class="place-list"></div>
+        </aside>
+      </main>
+
+      <nav class="category-tabs" id="categoryTabs" aria-label="장소 카테고리"></nav>
+    </div>
+
+    <div id="detailSheet" class="detail-sheet" aria-hidden="true"></div>
+    <script type="module" src="src/app.js?v=7"></script>
+  </body>
+</html>
