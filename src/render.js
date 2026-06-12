@@ -1,5 +1,20 @@
 import { categoryLabel } from "./filter.js?v=6";
 
+const fallbackImages = {
+  cafe: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80",
+  food: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80",
+  play: "https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=900&q=80",
+  kids: "https://images.unsplash.com/photo-1567057419565-4349c49d8a04?auto=format&fit=crop&w=900&q=80",
+  nature: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&w=900&q=80",
+  sea: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+  valley: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80",
+  experience: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80"
+};
+
+function imageFor(place) {
+  return place.image || fallbackImages[place.imageKey] || fallbackImages[place.category] || fallbackImages.experience;
+}
+
 export function renderTabs(categories, activeId, onSelect) {
   const tabs = document.querySelector("#categoryTabs");
   tabs.replaceChildren();
@@ -31,7 +46,7 @@ export function renderList(places, categories, state, onSelect) {
     const card = document.createElement("button");
     card.className = "place-card";
     card.innerHTML = `
-      <img src="${place.image}" alt="${place.name} 사진" loading="lazy">
+      <img src="${imageFor(place)}" alt="${place.name} 사진" loading="lazy">
       <span>
         <h3>${place.name}</h3>
         <p>${place.region} · ${place.age} · 추천 ${place.score}</p>
@@ -46,7 +61,7 @@ export function renderList(places, categories, state, onSelect) {
 export function showDetail(place) {
   const sheet = document.querySelector("#detailSheet");
   sheet.innerHTML = `
-    <img class="detail-hero" src="${place.image}" alt="${place.name} 사진">
+    <img class="detail-hero" src="${imageFor(place)}" alt="${place.name} 사진">
     <div class="detail-body">
       <div class="detail-top">
         <div>

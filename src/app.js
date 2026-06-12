@@ -1,8 +1,8 @@
-import { categories, places, searchSeeds } from "../data/places.js?v=7";
+import { categories, places, searchSeeds } from "../data/places.js?v=9";
 import { filterPlaces } from "./filter.js?v=7";
 import { renderMap } from "./map.js?v=7";
 import { installMapControls } from "./mapControls.js?v=7";
-import { hideDetail, renderList, renderSuggestions, renderTabs, showDetail } from "./render.js?v=7";
+import { hideDetail, renderList, renderSuggestions, renderTabs, showDetail } from "./render.js?v=9";
 import { changeZoom, focusPlace, focusPlaces, setCategory, setQuery, setSelected, state } from "./state.js?v=7";
 
 const searchInput = document.querySelector("#searchInput");
