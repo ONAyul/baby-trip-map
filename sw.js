@@ -1,4 +1,4 @@
-const CACHE = "baby-trip-v9";
+const CACHE = "baby-trip-v10";
 const IS_LOCAL = ["localhost", "127.0.0.1"].includes(self.location.hostname);
 const ASSETS = [
   "/",
@@ -12,6 +12,7 @@ const ASSETS = [
   "data/placeFactory.js?v=7",
   "data/places.js?v=9",
   "data/places-auto.js?v=9",
+  "data/places-cafes-auto.js?v=10",
   "data/places-daejeon-cheonan.js?v=8",
   "data/places-capital.js?v=7",
   "data/places-regions.js?v=7",

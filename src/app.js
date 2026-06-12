@@ -1,4 +1,4 @@
-import { categories, places, searchSeeds } from "../data/places.js?v=9";
+import { categories, places, searchSeeds } from "../data/places.js?v=10";
 import { filterPlaces } from "./filter.js?v=7";
 import { renderMap } from "./map.js?v=7";
 import { installMapControls } from "./mapControls.js?v=7";
